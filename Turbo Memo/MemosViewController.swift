@@ -84,7 +84,7 @@ class MemosViewController: UITableViewController, UIImagePickerControllerDelegat
     
     // Add video button if possible.
     let videoAction = UIAlertAction(title: "Video", style: UIAlertActionStyle.Default) { (let action: UIAlertAction) -> Void in
-        weakSelf?.presentCameraControllerForSourceType(UIImagePickerControllerSourceType.PhotoLibrary)
+        weakSelf?.presentCameraControllerForSourceType(UIImagePickerControllerSourceType.Camera)
     }
     controller.addAction(videoAction)
     
