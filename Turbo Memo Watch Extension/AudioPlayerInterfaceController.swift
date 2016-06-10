@@ -53,9 +53,13 @@ class AudioPlayerInterfaceController: WKInterfaceController {
   
   
   @IBAction func playButtonTapped() {
+    
+    play()
   }
   
   @IBAction func pauseButtonTapped() {
+    
+    player?.pause()
   }
   
 }
