@@ -68,7 +68,7 @@ class InterfaceController: WKInterfaceController, MemoStoreObserver {
   override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
     
     let memo = memos[rowIndex]
-    let options: [NSObject: AnyObject] = [WKMediaPlayerControllerOptionsAutoplayKey: true]
+    let options: [NSObject: AnyObject] = [WKMediaPlayerControllerOptionsAutoplayKey: true, WKMediaPlayerControllerOptionsLoopsKey: true]
     
     presentMediaPlayerControllerWithURL(memo.URL, options: options) { (didEndPlay: Bool, endTime: NSTimeInterval, error: NSError?) -> Void in
       
