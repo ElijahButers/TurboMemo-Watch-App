@@ -36,6 +36,22 @@ class AudioPlayerInterfaceController: WKInterfaceController {
     }
   }
   
+  override func didAppear() {
+    super.didAppear()
+    play()
+  }
+  
+  private func play() {
+    
+    if player?.status == .ReadyToPlay {
+      print("WKAudioPlayer is playing.")
+      player?.play()
+    } else {
+      print("WKAudioPlayer failed to play")
+    }
+  }
+  
+  
   @IBAction func playButtonTapped() {
   }
   
