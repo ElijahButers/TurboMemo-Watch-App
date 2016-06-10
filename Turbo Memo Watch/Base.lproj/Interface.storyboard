@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -19,6 +19,7 @@
                                                 <items>
                                                     <group width="0.40000000000000002" height="1" alignment="left" id="9mg-Cb-lFu" userLabel="Left Group">
                                                         <items>
+                                                            <movie width="1" height="100" alignment="left" id="7Mj-WR-kMb"/>
                                                             <imageView width="1" height="1" alignment="left" image="voice-icon" contentMode="scaleAspectFit" id="E68-G8-A9H"/>
                                                         </items>
                                                         <edgeInsets key="margins" left="2" right="0.0" top="2" bottom="2"/>
@@ -38,6 +39,7 @@
                                                 <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                             </group>
                                             <connections>
+                                                <outlet property="interfaceMovie" destination="7Mj-WR-kMb" id="f9A-lF-Tpx"/>
                                                 <outlet property="previewImage" destination="E68-G8-A9H" id="HgA-na-JIQ"/>
                                                 <outlet property="textLabel" destination="9NM-nC-fkd" id="lFd-vx-kzr"/>
                                             </connections>
