@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Turbo_Memo_Watch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="I3f-E9-cVp" userLabel="Valid Content Group">
+                            <items>
+                                <table alignment="left" id="1jN-p0-SmY">
+                                    <items>
+                                        <tableRow identifier="MemoRowController" id="sBS-HG-LFl" userLabel="MemoRowController" customClass="MemoRowController" customModule="Turbo_Memo_Watch_Extension">
+                                            <group key="rootItem" width="1" height="54" alignment="left" radius="0.0" spacing="0.0" id="uS2-s9-BXq" userLabel="Container Group">
+                                                <items>
+                                                    <group width="0.40000000000000002" height="1" alignment="left" id="9mg-Cb-lFu" userLabel="Left Group">
+                                                        <items>
+                                                            <imageView width="1" height="1" alignment="left" image="voice-icon" contentMode="scaleAspectFit" id="E68-G8-A9H"/>
+                                                        </items>
+                                                        <edgeInsets key="margins" left="2" right="0.0" top="2" bottom="2"/>
+                                                    </group>
+                                                    <group width="0.59999999999999998" height="1" alignment="right" spacing="0.0" id="gtp-sw-xHH" userLabel="Right Group">
+                                                        <items>
+                                                            <label width="1" height="1" alignment="center" verticalAlignment="center" textAlignment="right" numberOfLines="0" id="9NM-nC-fkd">
+                                                                <string key="text">7:34PM
+07/25/2015</string>
+                                                                <fontDescription key="font" type="system" pointSize="13"/>
+                                                            </label>
+                                                        </items>
+                                                        <edgeInsets key="margins" left="4" right="4" top="0.0" bottom="0.0"/>
+                                                    </group>
+                                                </items>
+                                                <color key="backgroundColor" red="0.10980392160000001" green="0.4941176471" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="previewImage" destination="E68-G8-A9H" id="HgA-na-JIQ"/>
+                                                <outlet property="textLabel" destination="9NM-nC-fkd" id="lFd-vx-kzr"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                        <group width="1" height="1" alignment="left" layout="vertical" spacing="4" id="yyq-QZ-wOU" userLabel="Invalid Content Group">
+                            <items>
+                                <label width="1" height="1" alignment="left" text="No memo :[" textAlignment="center" numberOfLines="0" id="bXB-kB-dYb"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTable" destination="1jN-p0-SmY" id="btj-8S-crE"/>
+                        <outlet property="invalidContentGroup" destination="yyq-QZ-wOU" id="iIa-qC-gpz"/>
+                        <outlet property="validContentGroup" destination="I3f-E9-cVp" id="XPJ-dv-CTj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="308" y="357"/>
+        </scene>
+        <!--AudioPlayerInterfaceController-->
+        <scene sceneID="hcV-fr-n0y">
+            <objects>
+                <controller identifier="AudioPlayerInterfaceController" hidesWhenLoading="NO" id="FaG-A7-SVe" customClass="AudioPlayerInterfaceController" customModule="Turbo_Memo_Watch_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Play" id="Ipr-Qb-Sxd">
+                            <connections>
+                                <action selector="playButtonTapped" destination="FaG-A7-SVe" id="LFn-98-7fh"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Pause" id="8yw-4L-uGG">
+                            <connections>
+                                <action selector="pauseButtonTapped" destination="FaG-A7-SVe" id="fog-vF-sbH"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="330"/>
+        </scene>
+    </scenes>
+</document>
