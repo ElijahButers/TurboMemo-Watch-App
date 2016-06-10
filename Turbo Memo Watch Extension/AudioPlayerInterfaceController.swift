@@ -24,6 +24,8 @@ import WatchKit
 
 class AudioPlayerInterfaceController: WKInterfaceController {
   
+  var player: WKAudioFilePlayer?
+  
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
   }
