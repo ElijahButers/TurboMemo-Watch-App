@@ -28,6 +28,12 @@ class AudioPlayerInterfaceController: WKInterfaceController {
   
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
+    
+    if let memo = context as? VoiceMemo {
+      let asset = WKAudioFileAsset(URL: memo.URL)
+      let playerItem = WKAudioFilePlayerItem(asset: asset)
+      player = WKAudioFilePlayer(playerItem: playerItem)
+    }
   }
   
   @IBAction func playButtonTapped() {
