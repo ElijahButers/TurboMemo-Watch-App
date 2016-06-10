@@ -65,6 +65,17 @@ class InterfaceController: WKInterfaceController, MemoStoreObserver {
     MemoStore.sharedStore.unregisterObserver(self)
   }
   
+  override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    
+    let memo = memos[rowIndex]
+    let options: [NSObject: AnyObject] = [WKMediaPlayerControllerOptionsAutoplayKey: true]
+    
+    presentMediaPlayerControllerWithURL(memo.URL, options: options) { (didEndPlay: Bool, endTime: NSTimeInterval, error: NSError?) -> Void in
+      
+      print("Finished playing \(memo.URL.lastPathComponent). DidEndPlay? \(didEndPlay). Error? (error?.localizedDescription)")
+  }
+}
+  
   // MARK: Helper
   
   /// The designated helper method to reload and update the entire interface when the data source is updated.
