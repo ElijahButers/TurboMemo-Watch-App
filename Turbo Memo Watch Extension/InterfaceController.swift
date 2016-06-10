@@ -120,10 +120,16 @@ class InterfaceController: WKInterfaceController, MemoStoreObserver {
       controller.textLabel.setText(dateString)
       
       if let videoMemo = memo as? VideoMemo {
+        controller.interfaceMovie.setHidden(false)
+        controller.previewImage.setHidden(true)
         if let image = videoMemo.smallPreviewImage {
-          let imageData = UIImagePNGRepresentation(image)
-          controller.previewImage.setImageData(imageData)
+          let posterImage = WKImage(image: image)
+          controller.interfaceMovie.setPosterImage(posterImage)
         }
+      controller.interfaceMovie.setMovieURL(videoMemo.URL)
+    } else {
+        controller.interfaceMovie.setHidden(true)
+        controller.previewImage.setHidden(false)
       }
     }
   }
