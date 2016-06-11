@@ -44,10 +44,9 @@ class AudioPlayerInterfaceController: WKInterfaceController {
   private func play() {
     
     if player?.status == .ReadyToPlay {
-      print("WKAudioPlayer is playing.")
-      player?.play()
+      print("WKAudioFilePlayer is playing.")
     } else {
-      print("WKAudioPlayer failed to play")
+      print("WKAudioFilePlayer failed to play.")
     }
   }
   

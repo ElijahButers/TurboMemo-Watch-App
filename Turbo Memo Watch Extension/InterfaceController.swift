@@ -66,14 +66,18 @@ class InterfaceController: WKInterfaceController, MemoStoreObserver {
   }
   
   override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-    
+    // Mine
     let memo = memos[rowIndex]
-    let options: [NSObject: AnyObject] = [WKMediaPlayerControllerOptionsAutoplayKey: true, WKMediaPlayerControllerOptionsLoopsKey: true]
-    
-    presentMediaPlayerControllerWithURL(memo.URL, options: options) { (didEndPlay: Bool, endTime: NSTimeInterval, error: NSError?) -> Void in
+    if let voiceMemo = memo as? VoiceMemo {
+      presentControllerWithName("AudioPlayerInterfaceController", context: voiceMemo)
+    } else {
+      let options: [NSObject: AnyObject] = [WKMediaPlayerControllerOptionsAutoplayKey : true,
+        WKMediaPlayerControllerOptionsLoopsKey: true]
       
-      print("Finished playing \(memo.URL.lastPathComponent). DidEndPlay? \(didEndPlay). Error? (error?.localizedDescription)")
-  }
+      presentMediaPlayerControllerWithURL(memo.URL, options: options) { (didEndPlay: Bool, endTime: NSTimeInterval, error: NSError?) -> Void in
+        print("Finished playing \(memo.URL.lastPathComponent). Did end play? \(didEndPlay). Error? \(error?.localizedDescription)")
+      }
+    }
 }
   
   // MARK: Helper
